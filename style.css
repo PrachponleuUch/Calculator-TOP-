@@ -1,0 +1,66 @@
+body{
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+main{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 42vw;
+  width: 28vw;
+  border: 1px solid #00a9f2;
+  border-radius: 2%;
+}
+
+.output{
+  background-color: white;
+  border: 1vw solid black;
+  height: 20%;
+  border-radius: 5%;
+
+}
+
+.output h1{
+  text-align: right;
+  color: #00a9f2;
+  font-weight: bold;
+}
+
+.input{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.rows{
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button{
+  height: 90%;
+  width: 22.5%;
+  background-color: blueviolet;
+  color: white;
+}
+
+button.two{
+  width: 46.5%;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  main{
+    height: 96vw;
+    width: 64vw;
+    margin-left: 17vw;
+  }
+}
