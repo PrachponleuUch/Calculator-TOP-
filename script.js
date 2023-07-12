@@ -47,7 +47,6 @@ function operate(a, b, op){
 }
 
 function operatorCheck(){
-  // If an operator has been click once before, do the operation.
   if(op === 'equal')
   {
     output.textContent = number1;
@@ -55,7 +54,6 @@ function operatorCheck(){
   else if(op){
     operate(number1, number2, op);
   }
-  // Else push the value from number2 to number1
   else{
     number1 = number2;
     number2 = '';
