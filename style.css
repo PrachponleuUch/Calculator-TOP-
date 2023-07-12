@@ -29,6 +29,8 @@ main{
   text-align: right;
   color: #00a9f2;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .input{

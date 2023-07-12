@@ -1,5 +1,5 @@
 function add(a, b){
-  number1 = a + b;
+  number1 = (a + b);
   number2 = '';
   output.textContent = a + b;
 }
@@ -23,8 +23,9 @@ function divide(a, b){
 }
 
 function operate(a, b, op){
-  a = parseInt(a);
-  b = parseInt(b);
+  a = Number(a);
+  b = Number(b);
+
   switch(op){
     case "add":
       add(a,b);
@@ -47,12 +48,12 @@ function operate(a, b, op){
 
 function operatorCheck(){
   // If an operator has been click once before, do the operation.
-  if(op === equalBtn.value)
+  if(op === 'equal')
   {
     output.textContent = number1;
   }
   else if(op){
-    operate(number1, number2, op)
+    operate(number1, number2, op);
   }
   // Else push the value from number2 to number1
   else{
@@ -65,11 +66,10 @@ function operatorCheck(){
 let numberBtns = document.querySelectorAll('.number');
 let output = document.querySelector('h1');
 let reset = document.querySelector('#reset');
-let additionBtn = document.querySelector('#add');
-let subtractBtn = document.querySelector('#subtract');
-let multiplyBtn = document.querySelector('#multiply');
-let divideBtn = document.querySelector('#divide');
-let equalBtn = document.querySelector('#equal');
+let operators = document.querySelectorAll('.operator');
+let negate = document.querySelector('#negate');
+let percent = document.querySelector('#percent');
+let dot = document.querySelector('#dot');
 let number1 = localStorage.number1 = '';
 let number2 = localStorage.number2 = '';
 let op = localStorage.op = '';
@@ -89,32 +89,52 @@ reset.addEventListener('click', (e) => {
   output.textContent = '';
 });
 
-additionBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  operatorCheck();
-  op = additionBtn.value;
+operators.forEach((operator) => {
+  operator.addEventListener('click', (e) => {
+    e.preventDefault();
+    operatorCheck();
+    op = operator.value;
+  })
 })
 
-subtractBtn.addEventListener('click', (e) => {
+negate.addEventListener('click', (e) => {
   e.preventDefault();
-  operatorCheck();
-  op = subtractBtn.value;
+  if(!(number2)) { 
+    number1 = (-(Number(number1))).toString();
+    output.textContent = number1;
+  }
+  else {  
+    number2 = (-(Number(number2))).toString();
+    output.textContent = number2;
+  }
 })
 
-multiplyBtn.addEventListener('click', (e) => {
+percent.addEventListener('click', (e) => {
   e.preventDefault();
-  operatorCheck();
-  op = multiplyBtn.value;
+  if(!(number2)) { 
+    number1 = ((Number(number1))/100).toString();
+    output.textContent = number1;
+  }
+  else {  
+    number2 = ((Number(number2))/100).toString();
+    output.textContent = number2;
+  }
 })
 
-divideBtn.addEventListener('click', (e) => {
+dot.addEventListener('click', (e) => {
   e.preventDefault();
-  operatorCheck();
-  op = divideBtn.value;
-})
-
-equalBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  operatorCheck();
-  op = equalBtn.value;
+  if(!(number2)) { 
+    if (!(number1.includes('.'))) 
+    {  
+      number1 = number1 + '.';
+    } 
+    output.textContent = number1;
+  }
+  else {  
+    if (!(number2.includes('.'))) 
+    {  
+      number2 = number2 + '.';
+    } 
+    output.textContent = number2;
+  }
 })
