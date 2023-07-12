@@ -1,5 +1,5 @@
 function add(a, b){
-  number1 = (a + b);
+  number1 = a + b;
   number2 = '';
   output.textContent = a + b;
 }
@@ -138,3 +138,17 @@ dot.addEventListener('click', (e) => {
     output.textContent = number2;
   }
 })
+
+document.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.key === "Backspace") {
+    if(!(number2)) { 
+      number1 = number1.slice(0, -1);
+      output.textContent = number1;
+    }
+    else {   
+      number2 = number2.slice(0, -1);
+      output.textContent = number2;
+    }
+  }
+});
