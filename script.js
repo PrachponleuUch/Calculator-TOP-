@@ -139,7 +139,7 @@ dot.addEventListener('click', (e) => {
   }
 })
 
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keydown", function(event) {
   event.preventDefault();
   if (event.key === "Backspace") {
     if(!(number2)) { 

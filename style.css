@@ -1,10 +1,11 @@
 body{
-  background-color: gray;
+  background: url(./bg.avif);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100%;
+  background-size:cover;
 }
 
 main{
@@ -13,7 +14,7 @@ main{
   flex-direction: column;
   height: 42vw;
   width: 28vw;
-  border: 1px solid #00a9f2;
+  border: 1px solid purple;
   border-radius: 2%;
 }
 
