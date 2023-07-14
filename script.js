@@ -1,3 +1,5 @@
+//number2 is for taking input, then store that input into number1 and take another input for number2
+//op is for storing operation input
 function add(a, b){
   number1 = a + b;
   number2 = '';
@@ -71,6 +73,7 @@ let dot = document.querySelector('#dot');
 let number1 = localStorage.number1 = '';
 let number2 = localStorage.number2 = '';
 let op = localStorage.op = '';
+
 numberBtns.forEach((numberBtn) => {
   numberBtn.addEventListener('click', () => {
       number2 += numberBtn.value;
