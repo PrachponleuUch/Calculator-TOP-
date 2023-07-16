@@ -82,7 +82,7 @@ numberBtns.forEach((numberBtn) => {
 });
 
 reset.addEventListener('click', (e) => {
-  e.preventDefault();
+  
   localStorage.clear();
   number1 = '';
   number2 = '';
@@ -92,14 +92,14 @@ reset.addEventListener('click', (e) => {
 
 operators.forEach((operator) => {
   operator.addEventListener('click', (e) => {
-    e.preventDefault();
+    
     operatorCheck();
     op = operator.value;
   })
 })
 
 negate.addEventListener('click', (e) => {
-  e.preventDefault();
+  
   if(!(number2)) { 
     number1 = (-(Number(number1))).toString();
     output.textContent = number1;
@@ -111,7 +111,7 @@ negate.addEventListener('click', (e) => {
 })
 
 percent.addEventListener('click', (e) => {
-  e.preventDefault();
+  
   if(!(number2)) { 
     number1 = ((Number(number1))/100).toString();
     output.textContent = number1;
@@ -123,7 +123,7 @@ percent.addEventListener('click', (e) => {
 })
 
 dot.addEventListener('click', (e) => {
-  e.preventDefault();
+  
   if(!(number2)) { 
     if (!(number1.includes('.'))) 
     {  
@@ -140,9 +140,9 @@ dot.addEventListener('click', (e) => {
   }
 })
 
-document.addEventListener("keydown", function(event) {
-  event.preventDefault();
-  if (event.key === "Backspace") {
+document.addEventListener("keydown", function(e) {
+  
+  if (e.key === "Backspace") {
     if(!(number2)) { 
       number1 = number1.slice(0, -1);
       output.textContent = number1;
