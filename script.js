@@ -82,7 +82,6 @@ numberBtns.forEach((numberBtn) => {
 });
 
 reset.addEventListener('click', (e) => {
-  
   localStorage.clear();
   number1 = '';
   number2 = '';
@@ -92,7 +91,6 @@ reset.addEventListener('click', (e) => {
 
 operators.forEach((operator) => {
   operator.addEventListener('click', (e) => {
-    
     operatorCheck();
     op = operator.value;
   })
